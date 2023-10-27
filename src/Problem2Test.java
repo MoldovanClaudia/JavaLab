@@ -37,9 +37,42 @@ public class Problem2Test {
 
         assert (resultD == expectedD);
 
-
-
-
      }
+
+    @Test
+    public void maxValue_unexpected() {
+        Problem2 problem2 = new Problem2();
+        int[] values = new int[]{4, 8, 3, 10, -17};
+        int result = problem2.maxValue(values);
+        assert result == 0 : "Test failed";
+    }
+
+    @Test
+    public void minValue_unexpected() {
+        Problem2 problem2 = new Problem2();
+        int[] values = new int[]{4, 8, 3, -10, 17};
+        int result = problem2.minValue(values);
+        assert result == 0 : "Test failed";
+    }
+
+    @Test
+    public void maxSum_unexpected() {
+        Problem2 problem2 = new Problem2();
+        int[] values = new int[]{4, 8, -3, 10, 17};
+        int result = problem2.maxSum(values);
+        assert result == 0 : "Test failed";
+    }
+
+    @Test
+    public void minSum_unexpected() {
+        Problem2 problem2 = new Problem2();
+        int[] values = new int[]{4, -8, 3, 10, 17};
+        int result = problem2.minSum(values);
+        assert result == 0 : "Test failed";
+    }
+
+
+
+
 
 }

@@ -40,4 +40,44 @@ public class Problem4Test {
         assert (resultD == expectedD);
     }
 
+    @Test
+    public void cheapestKeyboard_uexpected() {
+        Problem4 problem4 = new Problem4();
+        int[] keyboardPrice = new int[]{40, -35, 70, 15, 45};
+        int result = problem4.cheapestKeyboard(keyboardPrice);
+        assert result == 0 : "Test failed";
+    }
+
+    @Test
+    public void mostExpensiveItem_unexpected() {
+        Problem4 problem4 = new Problem4();
+        int[] keyboardPrice = new int[]{40, 35, -70, 15, 45};
+        int[] USBprice = new int[]{20, -15, 40, 15};
+        int result = problem4.mostExpensiveItem(keyboardPrice, USBprice);
+        assert result == 0 : "Test failed";
+
+    }
+
+//    @Test
+//    public void buyByBudget_unexpected() {
+//        Problem4 problem4 = new Problem4();
+//        int[] USBprice = new int[]{21, 13, 40, 11, 65};
+//        int budget = 10;
+//        int result = problem4.buyByBudget(USBprice, budget);
+//        assert result == 0 : "Test failed";
+//    }
+
+    @Test
+    public void costs_unexpected() {
+        Problem4 problem4 = new Problem4();
+        int[] keyboardPrice = new int[]{40, 50, 60};
+        int[] USBprice = new int[]{8, 12};
+        int budget = 20;
+        int result = problem4.costs(keyboardPrice, USBprice, budget);
+        assert result == -1 : "Test failed";
+}
+
+
+
+
 }

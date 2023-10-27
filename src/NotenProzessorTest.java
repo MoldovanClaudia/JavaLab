@@ -20,6 +20,7 @@ public class NotenProzessorTest {
 
         int[] resultA = notenProzessor.nichtAusreichendeNoten(noten);
         int[] expectedA = new int[] { 10, 20, 30};
+        int[] unexpectedA = new int[] { 48, 50};
 
         assertArrayEquals(SHOULD_BE_EQUAL, expectedA, resultA);
 
@@ -38,6 +39,45 @@ public class NotenProzessorTest {
 
         assert(expectedD == resultD);
     }
+
+    @Test
+    public void nichtAusreichendeNotenTest_unexpected() {
+        NotenProzessor problem1 = new NotenProzessor();
+        int[] noten = new int[]{12, 27, 45, 89, -66, 100, 73, 92, -34, 22};
+        int[] result = problem1.nichtAusreichendeNoten(noten);
+        assert result == null : "Test failed";
+
+    }
+
+    @Test
+    public void meanGradeTest_unexpected() {
+        NotenProzessor problem1 = new NotenProzessor();
+        int[] grades = new int[]{12, 27, 45, 89, -66, 100, 73, 92, 34, -22};
+        int result = problem1.meanGrade(grades);
+        assert result == 0 : "Test failed";
+    }
+
+    @Test
+    public void roundedGradeTest_unexpected() {
+        NotenProzessor problem1 = new NotenProzessor();
+        int[] grades = new int[]{12, 27, 45, -89, 66, 100, 73, 92, -34, 22};
+        int[] result = problem1.roundedGrades(grades);
+        assert result == null : "Test failed";
+    }
+
+    @Test
+    public void maximaleAbgerundeteNotenTest_unexpected() {
+        NotenProzessor problem1 = new NotenProzessor();
+        int[] grades = new int[]{12, 27, 45, 89, 66, -100, 73, 92, 34, -22};
+        int result = problem1.maxRoundedGrade(grades);
+        assert result == 0 : "Test failed";
+}
+
+
+
+
+
+
 
 }
 

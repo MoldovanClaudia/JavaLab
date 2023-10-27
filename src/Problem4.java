@@ -4,6 +4,12 @@ public class Problem4 {
     // Schreiben Sie eine Methode, die die billigste Tastatur zurückgibt.
     // z.B. [40 35 70 15 45] => 15
     public int cheapestKeyboard(int[] keyboards) {
+        for (int idx = 0; idx < keyboards.length; idx++) {
+            if (keyboards[idx] < 0) {
+                return 0;
+            }
+        }
+
         int cheapest = Integer.MAX_VALUE;
         for (int idx = 0; idx < keyboards.length; idx++) {
             if (keyboards[idx] < cheapest) {
@@ -17,6 +23,18 @@ public class Problem4 {
     // Schreiben Sie eine Methode, die die teuerste Gegenstand zurückgibt.
     // z.B. Tastatur = [15 20 10 35], USB = [20, 15, 40 15] => 40
     public int mostExpensiveItem(int[] keyboards, int[] USBdrive) {
+        for (int idx = 0; idx < keyboards.length; idx++) {
+            if (keyboards[idx] < 0) {
+                return 0;
+            }
+        }
+
+        for (int idx = 0; idx < USBdrive.length; idx++) {
+            if (USBdrive[idx] < 0) {
+                return 0;
+            }
+        }
+
         int mostExpensive = Integer.MIN_VALUE;
         for (int idx = 0; idx < keyboards.length; idx++) {
             if (keyboards[idx] > mostExpensive) {
@@ -38,6 +56,15 @@ public class Problem4 {
     // zurückgibt.
     //z.B. Preise = [15 45 20], Budget = 30 => 20
     public int buyByBudget(int[] USBdrive, int budget) {
+        for (int idx = 0; idx < USBdrive.length; idx++) {
+            if (USBdrive[idx] < 0) {
+                return 0;
+            }
+        }
+
+        if (budget < 0)
+            return 0;
+
         int item = Integer.MIN_VALUE;
         for (int idx = 0; idx < USBdrive.length; idx++) {
             if (USBdrive[idx] > item && USBdrive[idx] <= budget) {
@@ -55,13 +82,28 @@ public class Problem4 {
     // Gegenstände.
     // z.B. b=60, tastaturen = [40 50 60] und usb Laufwerke = [8 12] => 50 + 8 = 58
     public int costs(int[] keyboards, int[] USBdrive, int budget) {
+
+        for (int idx = 0; idx < keyboards.length; idx++) {
+            if (keyboards[idx] < 0) {
+                return 0;
+            }
+        }
+        for (int idx = 0; idx < USBdrive.length; idx++) {
+            if (USBdrive[idx] < 0) {
+                return 0;
+            }
+        }
+        if (budget < 0) {
+            return 0;
+        }
+
         int keyboard = Integer.MIN_VALUE;
         int drive = Integer.MIN_VALUE;
         int totalCost = 0;
 
         for (int idx = 0; idx < keyboards.length; idx++) {
             for (int index = 0; index < USBdrive.length; index++) {
-                if ( keyboards[idx] + USBdrive[index] <= budget) {
+                if ( keyboards[idx] + USBdrive[index] <= budget && keyboards[idx] + USBdrive[index] > totalCost) {
                     keyboard = keyboards[idx];
                     drive =USBdrive[index];
                     totalCost = keyboards[idx] + USBdrive[index];

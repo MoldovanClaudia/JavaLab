@@ -4,6 +4,9 @@ public class Problem3 {
     // z.B. [1 3 0 0 0 0 0 0 0] + [8 7 0 0 0 0 0 0 0] = [1 0 0 0 0 0 0 0 0 0]
 
     public int[] calculateSum(int[] A, int[] B) {
+        if (A.length != B.length)
+            return null;
+
         int[] finalSum = new int[A.length];
         int flag = 0;
 
@@ -29,6 +32,9 @@ public class Problem3 {
     // Berechnen Sie die Multiplikation. Erste Zahl ist ein große Zahl, der Zweite Zahl ist nur ein Ziffer.
     // z.B. [2 3 6 0 0 0 0 0 0] * 2 = [4 7 2 0 0 0 0 0 0]
     public int[] multiply(int[] valueToBeMultiplied, int valueToMultiplyWith) {
+        if (valueToMultiplyWith > 9)
+            return null;
+
         int carry = 0;
         int[] result = new int[valueToBeMultiplied.length];
 
@@ -56,6 +62,9 @@ public class Problem3 {
 
 
     public int[] calculateDiff(int[] A, int[] B) {
+        if (A.length != B.length)
+            return null;
+
         int[] difference = new int[A.length];
         int carry = 0;
         int digit_difference;
@@ -89,6 +98,9 @@ public class Problem3 {
     // Berechnen Sie die ganzzahlige Division. Erste Zahl ist ein große Zahl, der Zweite Zahl ist nur ein Ziffer.
     // z.B. [2 3 6 0 0 0 0 0 0] / 2 = [1 1 8 0 0 0 0 0 0]
     public int[] division(int[] num, int number){
+        if (number == 0)
+            return null;
+
         int borrow=0;
         int n = num.length;
         int[] result= new int[n];

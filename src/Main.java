@@ -61,8 +61,8 @@ public class Main {
 
         Problem4 problem4 = new Problem4();
 
-        int keyboards[] = new int[] {40, 50, 60};
-        int UDBdrive[] = new int[] {8, 16};
+        int keyboards[] = new int[] {40, 50, 60, 30};
+        int UDBdrive[] = new int[] {8, 16, 1};
         int budget = 60;
 
         System.out.println();

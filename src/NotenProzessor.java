@@ -101,6 +101,11 @@ public class NotenProzessor {
     }
 
     public int maxRoundedGrade(int[] note) {
+        for (int idx = 0; idx < note.length; idx++) {
+            if (note[idx] < 0) {
+                return 0;
+            }
+        }
         int maxGrade = Integer.MIN_VALUE;
 
         for (int idx = 0; idx < note.length; idx++) {
